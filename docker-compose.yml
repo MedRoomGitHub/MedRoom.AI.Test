@@ -1,0 +1,25 @@
+version: '3'
+services:
+  med_room:
+    build:
+      context: .
+      args:
+        config_path: config/$ENV
+        base_image: jupyter/pyspark-notebook:python-3.8.8
+    container_name: med_room-container
+    user: root
+    image: opt/$SERVICE
+    working_dir: /opt/$SERVICE
+    env_file:
+      - config/$ENV/.env
+#      - .env
+    ports:
+      - ${JUPYTER_PORT-8080}:${JUPYTER_PORT-8080}
+    volumes:
+      - .:/opt/$SERVICE
+      - .:/src # Used by pre-commit on pytest step
+      - ./config/$ENV:/home/jovyan
+      - ./datalake:/datalake
+      - ./datalake/scikit_learn_data:/home/jovyan/scikit_learn_data
+      - ./config/$ENV:/opt/med_room/configs/cluster/
+    entrypoint: ./config/$ENV/actions/run.sh
