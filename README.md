@@ -21,7 +21,9 @@ A comparação pode ser feita tanto estruturalmente (levando em conta apenas as 
 ||Qual a intensidade da sua dor?|???
 
 ## Entrega esperada
-Arquivo .ipynb (notebook) com o passo a passo feito para encontrar o score de semelhança entre a frase original e as comparativas
+Arquivo .ipynb (notebook) com o passo a passo feito para encontrar o score de semelhança entre a frase original e as comparativas.
 
 ## Como entregar
 Faça um fork deste repositório e coloque o arquivo .ipynb dentro dele. Depois, nos avise via e-mail ou WhatsApp e envie o link do repositório para analisarmos a entrega.
+
+Boa sorte! ;)
