@@ -47,22 +47,13 @@ def func(x, b):
 Natural Language Extractor:
 
 * Cleaner
-* Tokenizer
-* N-gram
-* Stemmer
 
 Natural Language Transformer:
 
-* BoW (Bag-of-Words)
-* TF-iDF (Term Frequency - Inverse Document Frequency)
-* LDA (Latent Dirichlet Allocation)
-* LSA/SVD (Latent Semantic Analysis/Singular Value Decomposition)
+* Word2Vec
 
 Natural Language Model:
-* Train/Test Split * Natural Language Visualization:
-* Word Cloud
 * t-SNE
-* Confusion Matrix
 
 ## Main Contributors (until mar/2023- please join us!)
 
