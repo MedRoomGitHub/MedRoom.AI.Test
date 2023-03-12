@@ -3,7 +3,6 @@
 # Data Stuff
 gen
 data
-datalake/*
 
 config/local/
 
