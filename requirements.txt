@@ -1,0 +1,44 @@
+importlib-metadata
+openpyxl>=3.0.9
+PyYAML==5.1
+
+## Visualization
+seaborn==0.11.1
+
+## Text
+spacy==3.0.3
+# Datetime
+pendulum==2.0.5
+jupyterthemes>=0.20.0
+
+nltk==3.6.6
+spacy==3.0.3
+# Datetime
+pyLDAvis
+# Datetime
+pendulum==2.0.5
+kneebow
+
+
+# APIs
+requests==2.26.0
+pygments>=2.7.4 # not directly required, pinned by Snyk to avoid a vulnerability
+gensim==3.8.0
+python-Levenshtein==0.12.2
+
+# WordCloud
+wordcloud>=1.8.1
+
+#data visualization
+matplotlib>=3.1.1
+
+## Machine Learning libs
+hypopt>=1.0.9
+scikit-learn>=0.24.2
+joblib>=1.0.1
+
+pytest
+kneebow
+regex
+cython
+twine

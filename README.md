@@ -1,29 +1,68 @@
-# Teste - Equipe de inteligência artificial
+# Natural Language Processing - Models Similariting Words
 
-## Introdução
-Antes de iniciar sua jornada como integrante da equipe de IA da MedRoom, convidamos você a criar um pequeno projeto de exemplo, assim poderemos conhecer melhor suas habilidades técnicas e entender seus conhecimentos!
+[![Documentation](https://img.shields.io/badge/docs-0.0.8-orange.svg?style=flat-square)](https://google.com)
+[![Python required version: 3.8](https://img.shields.io/badge/python-3.8-blue.svg?style=flat-square)](https://www.python.org/downloads/release/python-370)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-## Objetivo
-Neste projeto o seu objetivo é devolver um score de semelhança entre frases. Para isso, você poderá criar um modelo, utilizar um já existente ou apenas aplicar métodos matemáticos na comparação.
+Model of a library for Natural Language Processing and Machine Learning applied to Computational Linguistics.
 
-## Dados
-Dada a seguinte frase original:
+[Inner-Source](https://en.wikipedia.org/wiki/Inner_source) project. Please feel free to fix bugs, add new functionalities and tools. If you do so, please add your name to the list of contributors down below.
 
-> Olhando para a escala na parede, qual valor indicaria melhor a sua dor hoje?
+## ⚠️ Attention!
 
-Faça a comparação com as 3 frases a seguir, devolvendo o score de semelhança entre a original e a comparativa.
-A comparação pode ser feita tanto estruturalmente (levando em conta apenas as palavras entre as duas frases), quanto semanticamente (levando em conta o sentido entre as duas frases). A escolha fica por sua conta!
+This project needed to install docker and docker-compose to run
+If there is any update on this lib, the version must be updated on this file :)
 
-|Frase original |Frases comparativas | Score de semelhança |
-|--|--|--|
-|Olhando para a escala na parede, qual valor indicaria melhor a sua dor hoje?|De acordo com a escala de dor ali na parede, qual valor você acha que mais representa a sua dor?|???
-||De 0 a 10, qual o nível de intensidade da sua dor atualmente?|???
-||Qual a intensidade da sua dor?|???
+Please follow that steps: [docker](https://docs.docker.com/engine/install/ubuntu/) and [docker-compose](https://docs.docker.com/compose/install/) to install.
 
-## Entrega esperada
-Arquivo .ipynb (notebook) com o passo a passo feito para encontrar o score de semelhança entre a frase original e as comparativas.
+Thanks 😄
 
-## Como entregar
-Faça um fork deste repositório e coloque o arquivo .ipynb dentro dele. Depois, nos avise via e-mail ou WhatsApp e envie o link do repositório para analisarmos a entrega.
+## Usage
 
-Boa sorte! ;)
+```shell
+$docker-compose --env-file config/local/.env build
+$docker-compose --env-file config/local/.env up -d **to up container** # A local jupyter server is now
+             # available at localhost:8081
+$docker-compose --env-file config/local/.env down **if you want off container**
+
+```
+
+## Install Libraries from Whl
+
+```shell
+* In terminal
+python3 setup.py bdist_wheel
+
+```
+
+## Black Formatter
+
+[Comand Line Black Option](https://github.com/psf/black#command-line-options)
+
+> Ignore the formatter black in code row or function
+
+```python
+
+# fmt: off
+def func(x, b):
+    return x * b
+
+```
+
+## Current functionalities:
+
+Natural Language Extractor:
+
+* Cleaner
+
+Natural Language Transformer:
+
+* Word2Vec
+
+Natural Language Model:
+
+* t-SNE
+
+## Main Contributors (until mar/2023- please join us!)
+
+* Eneas Rodrigues de Souza Junior - eneas.rodrigues25@gmail.com
