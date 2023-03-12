@@ -7,6 +7,7 @@ from sklearn.manifold import TSNE
 import numpy as np
 from med.room.processors.transform_data import NedRoomClean
 import pandas as pd
+from med.room.utils import logger
 
 
 
@@ -103,4 +104,25 @@ class Transform(NedRoomClean):
     @classmethod
     def relationship_words(self, model, list_of_relationship_positive, list_of_relationship_negative):
         return model.most_similar(positive=list_of_relationship_positive, negative=list_of_relationship_negative)
+    
+
+    @classmethod
+    def target_source_sentences(self, model, target_sentence, w2v_vocab):
+
+        for i in target_sentence:
+            sentences = [x for x in model.wv.vocab]
+            sentences_similarity = np.zeros(len(sentences))
+
+            target_sentence_words = [w for w in i.split() if w in w2v_vocab]
+            for idx, sentence in enumerate(sentences):
+                sentence_words = [w for w in sentence.split() if w in w2v_vocab]
+                sim = model.n_similarity(target_sentence_words, sentence_words)
+                sentences_similarity[idx] = sim
+
+            result = list(zip(sentences_similarity, sentences))
+            result.sort(key=lambda item:item[0], reverse=True)
+            logger.info(f"Target: {target_sentence}")
+            logger.info(result)      
+
+        return target_sentence, result
     

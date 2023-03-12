@@ -11,7 +11,8 @@ class CallMethods(NedRoomClean):
                 additional_stop_words: list,
                 especifc_word_similar: str,
                 list_of_relationship_positive: list,
-                list_of_relationship_negative: list):
+                list_of_relationship_negative: list,
+                target_sentence: list):
         
         
         self.filename = filename
@@ -20,6 +21,7 @@ class CallMethods(NedRoomClean):
         self.especifc_word_similar = especifc_word_similar
         self.list_of_relationship_positive = list_of_relationship_positive
         self.list_of_relationship_negative = list_of_relationship_negative
+        self.target_sentence = target_sentence
 
 
         super().__init__()
@@ -31,7 +33,9 @@ class CallMethods(NedRoomClean):
                         additional_stop_words,
                         especifc_word_similar,
                         list_of_relationship_positive,
-                        list_of_relationship_negative):
+                        list_of_relationship_negative,
+                        target_sentence):
+        
         
         logger.info('Start Process to Similary Words')
 
@@ -83,13 +87,18 @@ class CallMethods(NedRoomClean):
         matrix_words, dataframe_matrix = Transform.build_matrix_similar_words(model=model)
         logger.debug(f"matrix of similars: n\ {matrix_words}")
 
+        logger.info('Score a target sentence to source sentences')
+        w2v_vocab_result, result = Transform.target_source_sentences(model, target_sentence, w2v_vocab)
+        logger.debug(f"target phrases: {w2v_vocab_result}")
+
+
         logger.debug('build relationship words positive e negative correlation')
         print_info = Transform.relationship_words(model, list_of_relationship_negative=list_of_relationship_negative, list_of_relationship_positive=list_of_relationship_positive)
         logger.debug(f'relationship words: \n {print_info}')
 
         logger.info("Finishing Process")
 
-        return dataset, model_similar, matrix_words, dataframe_matrix, model, embeddings_en_2d, print_info, similar, word_clusters
+        return dataset, model_similar, matrix_words, dataframe_matrix, model, embeddings_en_2d, print_info, similar, word_clusters, w2v_vocab_result, result
     
 
 
