@@ -1,4 +1,4 @@
-# Natural Language Processing - Teste
+# Natural Language Processing - Models Similariting Words
 
 [![Documentation](https://img.shields.io/badge/docs-0.0.8-orange.svg?style=flat-square)](https://google.com)
 [![Python required version: 3.8](https://img.shields.io/badge/python-3.8-blue.svg?style=flat-square)](https://www.python.org/downloads/release/python-370)
@@ -27,6 +27,13 @@ $docker-compose --env-file config/local/.env down **if you want off container**
 
 ```
 
+## Install Libraries from Whl
+
+```shell
+* In terminal
+python3 setup.py bdist_wheel
+
+```
 
 ## Black Formatter
 
@@ -53,6 +60,7 @@ Natural Language Transformer:
 * Word2Vec
 
 Natural Language Model:
+
 * t-SNE
 
 ## Main Contributors (until mar/2023- please join us!)
